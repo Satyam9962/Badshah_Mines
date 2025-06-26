@@ -100,8 +100,10 @@ async def enter_seed(update: Update, context: ContextTypes.DEFAULT_TYPE):
     bio.seek(0)
     update_usage(update.effective_user, data)
     save_data(data)
-    await update.message.reply_photo(photo=bio, caption=f"✅ Safe tiles based on your seed.
-💎 Safe Tiles: {sorted(safe_tiles)}")
+    await update.message.reply_photo(
+    photo=bio,
+    caption=f"✅ Safe tiles based on your seed.\n💎 Safe Tiles: {sorted(safe_tiles)}"
+)
     await update.message.reply_text("🔁 Send another client seed or type /start to restart.")
     return ENTER_SEED
 
