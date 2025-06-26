@@ -117,9 +117,11 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE):
     expiry = datetime.fromisoformat(info["expiry"]).date()
     used = info["daily_used"]
     _, max_per_day = get_limits(info["plan"])
-    await update.message.reply_text(f"📊 Plan: {info['plan'].title()}
-📅 Expiry: {expiry}
-🔢 Signals Used Today: {used}/{max_per_day}")
+    await update.message.reply_text(
+    f"📊 Plan: {info['plan'].title()}\n"
+    f"📅 Expiry: {expiry}\n"
+    f"🔢 Signals Used Today: {used}/{max_per_day}"
+)
 
 async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("❌ Cancelled.")
