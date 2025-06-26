@@ -51,7 +51,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("Mines Basic", callback_data="basic")],
         [InlineKeyboardButton("Mines King 👑", callback_data="king")]
     ]
-    await update.message.reply_text("Welcome to Stake Mines Predictor Bot!
+    await update.message.reply_text("Welcome to Stake Mines Predictor Bot!")
 Choose your plan:", reply_markup=InlineKeyboardMarkup(keyboard))
     return CHOOSE_PLAN
 
