@@ -76,8 +76,9 @@ async def enter_passkey(update: Update, context: ContextTypes.DEFAULT_TYPE):
     data = load_data()
     data[user_id] = {"plan": plan, "expiry": expiry.isoformat(), "daily_used": 0, "last_used": datetime.utcnow().isoformat()}
     save_data(data)
-    await update.message.reply_text(f"✅ Access granted for {plan.title()} plan until {expiry.date()}.
-Now send your client seed:")
+    await update.message.reply_text(
+    f"✅ Access granted for {plan.title()} plan until {expiry.date()}.\nNow send your client seed:"
+)
     return ENTER_SEED
 
 async def enter_seed(update: Update, context: ContextTypes.DEFAULT_TYPE):
